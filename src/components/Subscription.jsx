@@ -1,5 +1,6 @@
-import React, {useState, useEffect} from "react"
+import React, {useState} from "react"
 import LoadingMask from "./LoadingMask"
+
 
 const Subscription = ({close, hotel}) => {
   
@@ -25,7 +26,8 @@ const submitForm=()=>{
 return(
   <div>
     
-      {response===true && <p>Subscribed</p>}
+      {response===true && hotel!=="Hotel Curabitur suscipit suscipit"&&<p>Subscribed</p>}
+      {response===true && hotel==="Hotel Curabitur suscipit suscipit"&& value==="a@b.c"&&<p>Already subscribed</p>}
       {response=== false && <p>Oops, something happened</p>} 
     {loading && <LoadingMask/>}
       

@@ -3,6 +3,7 @@ import {useState, useEffect} from "react";
 import "./hotel.css"
 import Subscription from "./Subscription";
 
+
 const Hotel = ({name, city, stars}) => {
   const [shown, setShown] = useState(false)
   const [formShown, setFormShown] = useState(false);
@@ -13,7 +14,7 @@ return(
   <div className="hotels">
    <p>{name}</p>
     
-    {!shown ? <button onClick={()=>setShown(true)}>Show more</button> : <div>{shown && <p>{`${city} (${stars})`}</p>}<button onClick={()=> setShown(false)}>Show less</button>
+    {!shown ? <button onClick={()=>setShown(true)}>Show more</button> : <div><button onClick={()=> setShown(false)}>Show less</button>{shown && <p>{`${city} (${stars})`}</p>}
     <Subscription close={() => setFormShown(false)} hotel={name}/></div>}</div>
 )
 };
